@@ -1,5 +1,4 @@
 require 'tzinfo'
-require 'tzinfo/offset_rationals'
 
 class TzinfoTimezone
   MAPPING = {
