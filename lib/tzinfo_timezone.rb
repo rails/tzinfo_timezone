@@ -184,8 +184,8 @@ class TzinfoTimezone
     tzinfo.utc_to_local(time)
   end
 
-  def local_to_utc(time)
-    tzinfo.local_to_utc(time)
+  def local_to_utc(time, dst=true)
+    tzinfo.local_to_utc(time, dst)
   end
 
   # Adjust the given time to the time zone represented by +self+.
