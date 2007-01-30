@@ -161,13 +161,18 @@ class TzinfoTimezone
   # string. If +colon+ is false, a colon will not be inserted into the
   # result.
   def formatted_offset(colon=true)
-    return "" if utc_offset == 0
+    utc_offset == 0 ? '' : offset(colon)
+  end
+  
+  # Returns the offset of this time zone as a formatted string, of the
+  # format "+HH:MM".
+  def offset(colon=true)
     sign = (utc_offset < 0 ? -1 : 1)
     hours = utc_offset.abs / 3600
     minutes = (utc_offset.abs % 3600) / 60
     "%+03d%s%02d" % [ hours * sign, colon ? ":" : "", minutes ]
   end
-
+  
   # Compute and return the current time, in the time zone represented by
   # +self+.
   def now
