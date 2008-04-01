@@ -20,4 +20,16 @@ class TzinfoTimezoneTest < Test::Unit::TestCase
       assert_equal period.utc_offset, zone.utc_offset
     end
   end
+  
+  def test_dst_utc_offset_in_standard_time
+    zone = TzinfoTimezone["Central Time (US & Canada)"]
+    time = Time.utc(2008, 3, 9)
+    assert_equal zone.utc_offset, zone.dst_utc_offset(time)
+  end
+  
+  def test_dst_utc_offset_in_daylight_time
+    zone = TzinfoTimezone["Central Time (US & Canada)"]
+    time = Time.utc(2008, 3, 9, 12)
+    assert_equal zone.utc_offset + 3600, zone.dst_utc_offset(time)
+  end
 end

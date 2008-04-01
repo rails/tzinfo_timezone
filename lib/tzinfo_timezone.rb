@@ -178,6 +178,13 @@ class TzinfoTimezone
   def now
     tzinfo.now
   end
+  
+  # Returns the UTC offset of this time zone adjusted for DST at the
+  # current time, or optionally at the time specified by +relative_to+.
+  def dst_utc_offset(relative_to = now)
+    dst_offset = tzinfo.period_for_local(relative_to, true).dst? ? 3600 : 0
+    utc_offset + dst_offset
+  end
 
   # Return the current date in this time zone.
   def today
