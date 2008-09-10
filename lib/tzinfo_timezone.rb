@@ -101,7 +101,7 @@ class TzinfoTimezone
     "Kathmandu"                    => "Asia/Katmandu",
     "Astana"                       => "Asia/Dhaka",
     "Dhaka"                        => "Asia/Dhaka",
-    "Sri Jayawardenepura"          => "Asia/Dhaka",
+    "Sri Jayawardenepura"          => "Asia/Colombo",
     "Almaty"                       => "Asia/Almaty",
     "Novosibirsk"                  => "Asia/Novosibirsk",
     "Rangoon"                      => "Asia/Rangoon",
